@@ -1,0 +1,78 @@
+<div role="main" class="oj-hybrid-applayout-content">
+
+
+    <div class="oj-lg-12 oj-md-12 oj-sm-12 oj-xs-12 oj-flex-items-pad inventory-search">
+        <!-- ko if: !isSearchMode() -->
+        <header role="banner" class="oj-hybrid-applayout-header">
+            <div class="oj-flex-bar-start">
+                <button class="" data-bind="click: goToSearchMode, ojComponent: {component: 'ojButton', chroming: 'half', display: 'icons', label: 'Search', icons: {start: 'oj-fwk-icon oj-fwk-icon-magnifier'}}"></button>
+                
+                <div id= "refreshButton" data-bind="click: app.loadMBEInventoryData">
+                    <i class="fa fa-refresh" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="oj-hybrid-applayout-bar-title">
+            </div>
+            <div class="oj-flex-bar-end">
+            </div>
+        </header>
+        <!-- /ko -->
+        <!-- ko if: isSearchMode() -->
+        <header role="banner" class="oj-hybrid-applayout-header">
+            <div class="oj-flex-bar-start">
+                <button data-bind="click: exitSearchMode, ojComponent: {component: 'ojButton', chroming: 'half', display: 'icons', label: 'Close Search', icons: {start: 'oj-hybrid-applayout-header-icon-back oj-fwk-icon'}}"></button>
+            </div>
+            <div class="oj-flex-bar-middle">
+                <form id="inventorySearchForm" class="demo-inventory-search-form">
+                    <input id="inputSearch" placeholder="Search Inventory..." data-bind="ojComponent: {rawValue: nameSearch, value: nameSearch, component: 'ojInputText', disabled: false, rootAttributes: {style:'margin-bottom: 0;'}}">
+                </form>
+                <button class="clear-search-btn" data-bind="click: clearSearch, ojComponent: {component: 'ojButton', chroming: 'half', display: 'icons', label: 'Clear Input', icons: {start: 'oj-fwk-icon oj-fwk-icon-cross'}}"></button>
+            </div>
+            <div class="oj-flex-bar-end">
+            </div>
+        </header>
+        <!-- /ko -->
+    </div>
+
+    <div id="inventoryList" class="oj-flex oj-flex-items-pad">
+        <div class="oj-lg-12 oj-md-12 oj-sm-12 oj-xs-12 oj-flex-items-pad inventory">
+            <div id="promoItem" class="oj-flex oj-flex-items-pad">
+                <!-- ko foreach: inventoryDataSource -->
+                <div class="oj-sm-12 oj-md-6 oj-lg-6 oj-xl-4 oj-flex-item promo-item">
+                    <div class="product promo" data-bind="attr: {id: $data['identifier']}">
+                        <div class="oj-flex summary">
+                            <div class="oj-lg-5 oj-sm-5 oj-xs-12 image">
+                                <img data-bind="attr: {src: img_file, alt: name}, click: $parent.parentModule.goToPage.bind($data, 'tab1Detail', 'navSiblingLater')" />
+                            </div>
+                            <div class="oj-lg-7 oj-sm-7 oj-xs-12 oj-flex-items-pad">
+                                <div class="prod-info oj-flex-item">
+                                    <div class="name" data-bind="text: name, click: $parent.parentModule.goToPage.bind($data, 'tab1Detail', 'navSiblingLater')"></div>
+                                    <div class="promo-desc" data-bind="text: short_desc"></div>
+                                    
+                                    <div class="oj-form add-to-cart-form">
+                                        <!-- ko if: status === 'available' --> 
+                                        <form data-bind="attr: {id: 'check_out_form_' + $data['identifier']}, submit: $parent.parentModule.checkOutItem.bind($data,$parent.checkInOutSuccess)">
+                                            <input type="hidden" name="prod_id" id="prod_id" data-bind="value: $data['identifier']" />
+                                            <button type="submit" class="demo-blue-btn" data-bind="attr: {id: 'checkoutBtn' + $data['identifier']}, ojComponent: {component:'ojButton', label: 'Checkout', chroming: 'full'}"></button> <div data-bind="attr: {id: 'loader' + $data['identifier']}" class="loader-wrapper hide"></div>
+                                        </form>
+                                        <!-- /ko -->
+                                        <!-- ko if: status === 'checkedout' && userid === $parent.app.userInfo().userId --> 
+                                        <form data-bind="attr: {id: 'check_in_form_' + $data['identifier']}, submit: $parent.parentModule.checkInItem.bind($data,$parent.checkInOutSuccess)">
+                                            <input type="hidden" name="prod_id" id="prod_id" data-bind="value: $data['identifier']" />
+                                            <button type="submit" class="demo-checkin-btn" data-bind="attr: {id: 'checkoutBtn' + $data['identifier']}, ojComponent: {component:'ojButton', label: 'Checkin', chroming: 'full'}"></button> <div data-bind="attr: {id: 'loader' + $data['identifier']}" class="loader-wrapper hide"></div>
+                                        </form>
+                                        <!-- /ko -->
+                                        <!-- ko if: status !== 'available' && userid !== $parent.app.userInfo().userId --> 
+                                        <button type="submit" id="unavailableBtn" class="demo-disabled-btn" data-bind="ojComponent: {component:'ojButton', label: 'Unavailable', chroming: 'full', disabled}"></button>
+                                        <!-- /ko -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>

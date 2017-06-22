@@ -1,0 +1,48 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-applayout-fixed-top">
+  <header role="banner" class="oj-hybrid-applayout-header-no-border" data-bind="ojModule: headerSettings">
+  </header>
+  
+  <div role="navigation" class="oj-hybrid-applayout-navbar-page">
+    <div id="inventoryNavTabs" class="demo-nav-tabs" data-bind="ojComponent:{component: 'ojNavigationList', navigationLevel: 'page', selection: router.stateId, edge: 'top', optionChange: navBarChange }">
+      <ul>
+        <li id="tab1">
+          <a href="#">Browse</a>
+        </li>
+        <li id="tab2">
+          <a href="#">Lookup</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Incidents View Content -->
+<!-- ko if: router.stateId() -->
+<div id="inventory_content" class="oj-main oj-applayout-fixed-top-tabs-padding" data-bind="ojModule: moduleConfig()"></div>
+<!-- /ko -->
+    
+<div id="popupWrapper">
+    <div id="signaturepopup" class="demo-filter-popup signature-popup" data-bind="ojComponent:{component: 'ojPopup', tail: 'none', chrome: 'none'}">
+        <div class="oj-flex-bar">
+            <div class="signature-canvas">
+                <canvas id="signature" style="border: 1px solid black;"></canvas>
+            </div>
+        </div>
+
+        <div class="oj-flex-bar">
+            <div class="oj-flex-bar-end cancel">
+                <a href="#" data-bind="click: cancelSignaturePopup">Cancel</a>
+            </div>
+            <div class="oj-flex-bar-end clear">
+                <a href="#" data-bind="click: clearSignature">Clear</a>
+            </div>
+            <div class="oj-flex-bar-end done">
+                <a href="#" data-bind="click: signaturePopupDone">Done</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+<!--
+ Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<!--
+ Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+ <div class="oj-applayout-fixed-top">
+  <header role="banner" class="oj-hybrid-applayout-header-no-border" data-bind="ojModule: chatHeaderSettings">
+  </header>
+</div>
+
+<div id="activityListViewWrapper" style="margin-bottom: 55px;margin-top:55px" class="chat">
+
+    <ul id="activityListView" class="demo-activity-listview" aria-label="messages"
+        data-bind="ojComponent: {
+        component: 'ojListView',
+        scrollPolicyOptions: { scroller: scrollElem },
+        data: dataSource,
+        item: {template: 'message_template'},
+        rootAttributes: {id: 'activityListViewContainer'},
+        selectionMode: 'single',
+        optionChange: selectHandler,
+        scrollPolicyOptions: { scroller: scrollElem },
+        translations: {msgNoData: ' '}}">
+    </ul>
+
+</div>
+
+<div class="oj-applayout-fixed-bottom">
+    <footer role="contentinfo" class="oj-hybrid-applayout-footer">
+        <div class="oj-hybrid-applayout-toolbar-stretch oj-toolbar-top-border oj-flex-bar"
+             aria-controls="activityListView" data-bind="ojComponent: {component:'ojToolbar'}">
+            <!--<div class="oj-flex-bar-start">
+                <button id="bottom" class="oj-button-half-chrome"
+                        data-bind="click: function(){ return changePhoto($root); }, ojComponent: {
+                        component:'ojButton',
+                        display: 'icons',
+                        chroming: 'half',
+                        icons: {start:'oj-fwk-icon demo-icon-font-24 demo-camera-icon-24'},
+                        label: 'Camera'}">
+                </button>
+                <input type="file" id="upload-activity-pic" accept="image/*" style="display: none;height: 0;width: 0;">
+            </div>-->
+
+            <div class="oj-flex-bar-middle">
+                <input id="activityTextInput" aria-label="activity message" type="text"
+                       placeholder="Enter message to post"
+                       data-bind="ojComponent:
+                       {component: 'ojInputText',
+                       value: textValue,
+                       enterKey: postActivity($data.textValue()),
+                       rootAttributes: {style:'margin-bottom:0'}}"/>
+            </div>
+<!--click: function() { return postActivity($data.textValue()) },-->
+            <div class="oj-flex-bar-end">
+                <button id="postBtn" class="oj-button-half-chrome"
+                        data-bind="
+                        ojComponent: {
+                            component:'ojButton',
+                            chroming: 'half',
+                            label: 'Post', disabled: $root.isReadOnlyMode }"></button>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<script id="message_template" type="text/html">
+    <li data-bind="attr: {id: $data['id']}" class="chat-item">
+
+        <!-- ko if: from.type != 'self' -->
+        <div class="bubble you">
+            <div class="oj-lg-12">
+                <span class="header" data-bind="text: body.text"></span>
+
+                <!-- ko if: typeof body.choices != 'undefined' -->
+                <div class="choices">
+                    <ul class="bubble choices" data-bind="ojComponent: {component: 'ojListView',
+                                 selectionMode: 'single'}">
+                        <!-- ko foreach: body.choices -->
+                        <li data-bind="attr: { value: $data }">
+                            <span data-bind="text: $data"></span>
+                        </li>
+                        <!-- /ko -->
+                    </ul>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+        <!-- /ko -->
+
+        <!-- ko if: from.type == 'self' -->
+        <div class="bubble me">
+            <div class="oj-lg-12">
+                <span class="header" data-bind="text: text"></span>
+            </div>
+        </div>
+        <!-- /ko -->
+
+
+        <!-- /ko -->
+        <div style="clear:both"></div>
+    </li>
+</script>

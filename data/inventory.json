@@ -1,0 +1,53 @@
+[
+    {
+        "identifier": "123459",
+        "name": "Standard Drill",
+        "type": "power_tools",
+        "short_desc": "8 Amp 3/8 in. Corded Drill/Driver",
+        "img_file": "css/catalog/Catalog1.png",
+        "description": "8 Amp 3/8 in. Corded Drill/Driver. Circular Saw. Corded Drill/Driver features an 8 Amp motor that provides 2,700 RPM for powerful drilling into a wide range of materials.",
+        "status": "available",
+        "userid": ""
+        },
+    {
+        "identifier": "123458",
+        "name": "Saw",
+        "type": "power_tools",
+        "short_desc": "13-Amp 7-1/4 in. Circular Saw",
+        "img_file": "css/catalog/Catalog2.png",
+        "description": "13-Amp 7-1/4 in. Circular Saw. 13 Amp motor for cutting a variety of lumber, spindle lock for quick and easy blade changes, powerful 13 Amp motor.",
+        "status": "available",
+        "userid": ""
+        },
+    {
+        "identifier": "123457",
+        "name": "Impact Drill",
+        "type": "power_tools",
+        "short_desc": "1 in. SDS D-Handle Rotary Hammer",
+        "img_file": "css/catalog/Catalog3.png",
+        "description": "1 in. SDS D-Handle Rotary Hammer. 2.1 ft. - lbs. of torque with up to 35% harder hits. Powerful 9-amp motor: Delivers 0-1,620 RPM, 0-5,860 BPM. SDS D-Handle Rotary Hammer is designed to handle the toughest applications with accuracy and ease. With a powerful 7 Amp motor, this rotary hammer delivers 0-1500 RPM, 0-5625 BPM and 1.8 ft.",
+        "status": "available",
+        "userid": ""
+        },
+    {
+        "identifier": "123456",
+        "name": "Hammer",
+        "type": "hand_tools",
+        "short_desc": "16 lbs. Steel Octagonal Sledge Hammer with Hickory Handle",
+        "img_file": "css/catalog/Catalog4.png",
+        "description": "16 lbs. Steel Octagonal Sledge Hammer with Hickory Handle. Wood handle with compact structure providing high impact resistance. Octagonal design that distributes the load and equalizes stress. Alloyed steel head, press forged and heat treated. Beveled and machined striking face to prevent accidents due to metal shards.",
+        "status": "available",
+        "userid": ""
+        },
+    {
+        "identifier": "123450",
+        "name": "Grinder",
+        "type": "power_tools",
+        "short_desc": "120-Volt 8 in. Slow Speed Bench Grinder",
+        "img_file": "css/catalog/Catalog5.png",
+        "description": "120-Volt 8 in. Slow Speed Bench Grinder. From deburring ragged edges to cleaning objects to sharpening blades, the WEN 8 in. Slow-Speed Bench Grinder is the ideal companion for any workshop. These machines allow for simple resuscitation of dull blades, scissors, screwdrivers and more.",
+        "status": "checkedout",
+        "userid": "lisa.jones01"
+        }
+
+]

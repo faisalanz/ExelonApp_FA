@@ -1,0 +1,51 @@
+<div class="back-btn">
+    <div class="back-btn" data-bind="click: parentModule.goToPage.bind($data, 'tab1', 'navSiblingEarlier')"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back </div>
+</div>
+
+
+<div role="main" class="oj-hybrid-applayout-content">
+        
+    <div class="product" data-bind="attr: {id: productDetail().identifier}">
+        <div class="detail oj-flex oj-flex-items-pad">
+            <div class="oj-sm-12 oj-flex-item">
+                <div class="name" data-bind="text: productDetail().name"></div>
+            </div>
+            <div class="oj-sm-12 oj-flex-item">
+                <div class="tag-line" data-bind="text: productDetail().tag_line"></div>
+            </div>
+            <div class="oj-sm-12 oj-flex-item">
+                <div class="promo-desc" data-bind="text: productDetail().promo_desc"></div>
+            </div>
+            <div class="oj-sm-12 oj-flex oj-flex-items-pad">
+                <div class="oj-lg-5 oj-md-6 oj-sm-12 oj-xs-12 oj-flex-item prod-img">
+                    <img data-bind="attr: {src: productDetail().img_file, alt: name}"/>
+                </div>
+                <div class="oj-lg-7 oj-md-6 oj-sm-12 oj-xs-12 oj-flex-item">
+                    <div class="oj-lg-12 oj-md-12 oj-sm-12 oj-xs-12 oj-flex-item">
+                        <div class="description" data-bind="text: productDetail().description"></div>
+                    </div>
+                    <div class="oj-lg-12 oj-md-12 oj-sm-12 oj-xs-12 oj-flex-item txt-align-center">
+                        <div class="oj-form add-to-cart-form">
+                            <!-- ko if: checkInOutStatus() === 'available' --> 
+                            <form data-bind="attr: {id: 'check_out_form_' + productDetail().identifier}, submit: parentModule.checkOutItem.bind($data,checkOutSuccessCallback)">
+                                <input type="hidden" name="prod_id" id="prod_id" data-bind="value: productDetail().identifier" />
+                                <button type="submit" class="demo-blue-btn" data-bind="attr: {id: 'checkoutBtn' + productDetail().identifier}, ojComponent: {component:'ojButton', label: 'Checkout', chroming: 'full'}"></button> <div data-bind="attr: {id: 'loader' + productDetail().identifier}" class="loader-wrapper hide"></div>
+                            </form>
+                            <!-- /ko -->
+                            <!-- ko if: checkInOutStatus() === 'checkedout' && checkInOutUserId() === app.userInfo().userId --> 
+                            <form data-bind="attr: {id: 'check_in_form_' + productDetail().identifier}, submit: parentModule.checkInItem.bind($data,checkInSuccessCallback)">
+                                <input type="hidden" name="prod_id" id="prod_id" data-bind="value: productDetail().identifier" />
+                                <button type="submit" class="demo-checkin-btn" data-bind="attr: {id: 'checkoutBtn' + productDetail().identifier}, ojComponent: {component:'ojButton', label: 'Checkin', chroming: 'full'}"></button> <div data-bind="attr: {id: 'loader' + productDetail().identifier}" class="loader-wrapper hide"></div>
+                            </form>
+                            <!-- /ko -->
+                            <!-- ko if: checkInOutStatus() !== 'available' && checkInOutUserId() !== app.userInfo().userId --> 
+                            <button type="submit" id="unavailableBtn" class="demo-disabled-btn" data-bind="ojComponent: {component:'ojButton', label: 'Unavailable', chroming: 'full', disabled}"></button>
+                            <div class="check-out-to-user")>*This item is checked out to <span class="checkout-to-user-id" data-bind="text: app.getUserNameForUserId(productDetail().userid)"></span></div>
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+      </div>
+</div>

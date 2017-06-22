@@ -1,0 +1,53 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div role="main" class="oj-hybrid-applayout-content">
+        
+    <div id="promoList" class="oj-flex oj-flex-items-pad">
+        
+        <ul id="shoppingCartListHeader" class="no-list header">
+            <li class="header">
+                <div class="oj-flex row">
+                    <div class="oj-lg-4 oj-md-4 oj-sm-4 txt-align-left">
+                        <span class="item_heading">Tool</span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-4 txt-align-center">
+                        <span>Checkout Date</span>
+                    </div>
+                    <div class="oj-lg-4 oj-md-4 oj-sm-4 txt-align-center">
+                        <span>Checkin Date</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        
+        <ul id="listview" aria-label="list using array" 
+               data-bind="ojComponent: {component: 'ojListView', data: $parent.my_checkouts_DS, item: {template: 'server_template'}, selectionMode: 'single'}">
+        </ul>
+    </div>
+</div>
+
+
+
+<script type="text/html" id="server_template">
+    <li data-bind="attr: {id: $data['name']}">
+        <div class="oj-flex">
+            <div class="oj-lg-4 oj-md-4 oj-sm-4 txt-align-left">
+                <div class="data">
+                    <span data-bind="text: title"></span>
+                </div>
+            </div>
+            <div class="oj-lg-4 oj-md-4 oj-sm-4 txt-align-center">
+                <div class="delivery-date" data-bind="text: check_out_date"></div>
+            </div>
+            <div class="oj-lg-4 oj-md-4 oj-sm-4 txt-align-center">
+                <span data-bind="text: check_in_date"></span>
+            </div>
+        </div>
+    </li>
+</script>

@@ -1,0 +1,20 @@
+[
+    {
+        "id": "123458",
+        "title": "Saw",
+        "check_out_date": "Jun 7, 2017",
+        "check_in_date": "Due in 2 weeks"
+    },
+    {
+        "id": "123450",
+        "title": "Grinder",
+        "check_out_date": "Apr 2, 2017",
+        "check_in_date": "Apr 15, 2017"
+    },
+    {
+        "id": "123456",
+        "title": "Hammer",
+        "check_out_date": "Dec 11, 2016",
+        "check_in_date": "Dec 20, 2016"
+    }
+]

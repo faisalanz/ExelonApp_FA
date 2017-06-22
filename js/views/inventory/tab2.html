@@ -1,0 +1,68 @@
+
+<div role="main" class="oj-hybrid-applayout-content">
+    <div id="promoList" class="oj-flex oj-flex-items-pad">
+        <div class="oj-lg-12 oj-md-12 oj-sm-12 oj-xs-12 oj-flex-items-pad inventory">
+            <div id="promoItem" class="oj-flex oj-flex-items-pad">
+                <div class="pod scanner" data-bind="click: scanBarCode">
+                    <div class="fa-item"><i class="fa fa-barcode" aria-hidden="true"></i></div>
+                    <div class="notes">Tap to scan a barcode</div>
+                </div>
+                <div class="pod camera">
+                    <div class="fa-item" data-bind="click: takePicture"><i class="fa fa-camera" aria-hidden="true"></i></div>
+                    <div class="notes">Tap to take a picture</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="manualScanning" class="oj-flex oj-flex-items-pad">
+            <div class="manual-scanner-wrapper">
+                <span style="display:inline-block">
+                    <input id="mc1" type="text" class="manual-scanner-single-input"
+                        onfocus="this.select()" 
+                        data-bind="ojComponent: {component: 'ojInputText', 
+                                              value: prod_Id1},
+                                              event: { keyup: validate1}"/>
+                </span>
+                <span style="display:inline-block">
+                    <input id="mc2" type="text" class="manual-scanner-single-input"
+                        onfocus="this.select()" 
+                        data-bind="ojComponent: {component: 'ojInputText', 
+                                              value: prod_Id2},
+                                              event: { keyup: validate2 }"/>
+                </span>
+                <span style="display:inline-block">
+                    <input id="mc3" type="text" class="manual-scanner-single-input"
+                        onfocus="this.select()" 
+                        data-bind="ojComponent: {component: 'ojInputText', 
+                                              value: prod_Id3},
+                                              event: { keyup: validate3 }"/>
+                </span>
+                <span style="display:inline-block">
+                    <input id="mc4" type="text" class="manual-scanner-single-input"
+                        onfocus="this.select()" 
+                        data-bind="ojComponent: {component: 'ojInputText', 
+                                              value: prod_Id4},
+                                              event: { keyup: validate4 }"/>
+                </span>
+                <span style="display:inline-block">
+                    <input id="mc5" type="text" class="manual-scanner-single-input"
+                        onfocus="this.select()" 
+                        data-bind="ojComponent: {component: 'ojInputText', 
+                                              value: prod_Id5},
+                                              event: { keyup: validate5 }"/>
+                </span>
+                <span style="display:inline-block">
+                    <input id="mc6" type="text" class="manual-scanner-single-input"
+                        onfocus="this.select()" 
+                        data-bind="ojComponent: {component: 'ojInputText', 
+                                              value: prod_Id6},
+                                              event: { keyup: validate6}"/>
+                </span>
+            </div>
+            <div class="pod">
+                <div class="notes">or enter the code here</div>
+            </div>
+        </div>
+    </div>
+</div>

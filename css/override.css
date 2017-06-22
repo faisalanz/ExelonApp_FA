@@ -1,0 +1,237 @@
+.demo-gear-icon-24:before     { content: "\e609"; }
+.demo-fire-icon-24:before     { content: "\e908"; }
+.demo-person-icon-24:before   { content: "\e909"; }
+.demo-signout-icon-24:before  { content: "\e90b"; }
+.demo-info-icon-24:before     { content: "\e900"; }
+.demo-people-icon-24:before   { content: "\e902"; }
+
+.oj-button.oj-default.oj-button-half-chrome .oj-button-icon, 
+.oj-button.oj-focus-only.oj-button-half-chrome .oj-button-icon {
+    color: #4D4D4D;    
+    /*font-size: 1.3rem;*/
+}
+.oj-applayout-fixed-top-tabs-padding {
+    margin-top: 122px;
+}
+
+/* Hides the content area until we are ready to display after paddings have been adjusted. 
+    oj-complete is a marker class that is applied by the appController 
+    after adjusting the content area. */
+.oj-applayout-content:not(.oj-complete) {
+  visibility: hidden;
+}
+
+.oj-applayout-fixed-top-no-tabs-padding {
+    margin-top: 73px;
+}
+html:not([dir="rtl"]) .oj-hybrid-padding-start {
+    padding-left: 1.33333rem;
+}
+.oj-hybrid-padding {
+    padding: 1.33333rem;
+}
+.oj-hybrid-padding-top {
+    padding-top: 1.33333rem;
+}
+.oj-hybrid-applayout-offcanvas {
+    width: 80%;
+}
+.demo-navdrawer .demo-navdrawer-profile-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.demo-profile-icon {
+  width: 80px;
+  height: auto;
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+.demo-profile-name {
+  font-size: 1.714rem;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+  padding-bottom: 42px;
+}
+
+.demo-app-name {
+  padding-top: 40px;
+  color: #979899;
+}.demo-profile-name {
+    color: #fff;
+    font-weight: 400;
+}
+
+.oj-hybrid-applayout-header, 
+.oj-hybrid-applayout-header-no-border {
+    box-shadow: none;
+    border-bottom: 1px solid #d9dfe3;
+    background-color: #fff;
+    padding: 0.5rem 0.625rem 0.5rem 0.625rem;
+    text-transform: uppercase;
+}
+.oj-navigationlist-item-label {
+    line-height: 39px;
+    text-transform: uppercase;
+}
+
+
+/** BUTTONS **/
+.oj-button.oj-button-full-chrome, 
+.oj-button.oj-default.oj-button-full-chrome,
+.oj-button.oj-focus-only.oj-button-full-chrome {
+    background-color: #0572ce;
+    background-image: none;
+    border-color: #0572ce;
+    color: #ffffff;
+    border-radius: 0px;
+    padding: 0px 30px;
+    min-width: 8rem;
+}
+.long-btn.oj-button.oj-button-full-chrome {
+    min-width: 15rem;
+}
+.oj-button-label {
+    cursor: inherit;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.oj-button .oj-button-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/** INPUT **/
+.oj-inputtext-input, .oj-inputpassword-input, 
+.oj-inputtext-nocomp, .oj-inputpassword-nocomp {
+    font-size: 15px;
+    color: #000;
+}
+.oj-inputtext-input, .oj-inputpassword-input, 
+.oj-textarea-input, .oj-inputtext-nocomp, 
+.oj-inputpassword-nocomp, .oj-textarea-nocomp {
+    text-align: left;
+    color: #000;
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: #bababa;
+    border-width: 2px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-weight: normal;
+    width: 100%;
+}
+.oj-choice-item::before, 
+.oj-choice-row::before, 
+.oj-choice-row-inline::before {
+    content: "";
+    display: inline-block;
+    visibility: hidden;
+    /*min-height: 2.9rem;*/
+}
+.oj-radio, .oj-checkbox {
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 10%;
+    z-index: 1;
+}
+.oj-radio-label, 
+.oj-checkbox-label, 
+.oj-checkbox-label-nocomp {
+    color: #000;
+    display: -webkit-flex;
+    display: flex;
+    text-align: left;
+    height: 100%;
+    font-size: 1rem;
+    flex: 1 1 auto;
+    font-weight: normal;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+.oj-checkbox-label.oj-selected .oj-radiocheckbox-icon {
+    background-image: transparent;
+    background-image: url(images/checkbox_ena_selected.svg) no-repeat center center; !important;
+}
+html:not([dir="rtl"]) .oj-radio-label, 
+html:not([dir="rtl"]) .oj-checkbox-label, 
+html:not([dir="rtl"]) .oj-checkbox-label-nocomp {
+    text-align: left;
+}
+.oj-radiocheckbox-icon {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-order: 0;
+    width: 20px;
+    height: 20px;
+    margin: 0 20px 0 20px;
+}
+.oj-radioset-input-start .oj-radiocheckbox-icon, 
+.oj-checkboxset-input-start .oj-radiocheckbox-icon, 
+.oj-radioset-input-end .oj-radiocheckbox-label-text, 
+.oj-checkboxset-input-end .oj-radiocheckbox-label-text {
+    -webkit-order: 0;
+    order: 0;
+}
+.oj-radiocheckbox-label-text {
+    -webkit-order: 1;
+    order: 1;
+}
+.oj-checkbox-label .oj-radiocheckbox-icon {
+    /**background-image: url(theme/alta/checkbox_ena_unselected.svg);*/
+}
+.oj-checkbox-label.oj-selected .oj-radiocheckbox-icon {
+    background-image: url(theme/alta/checkbox_ena_selected.svg);
+}
+.oj-inputtext:not(.oj-disabled):not(.oj-read-only) .oj-inputtext-input:focus, 
+.oj-inputpassword:not(.oj-disabled):not(.oj-read-only) .oj-inputpassword-input:focus, 
+.oj-textarea:not(.oj-disabled):not(.oj-read-only) .oj-textarea-input:focus, 
+.oj-inputtext-nocomp:not([disabled]):not([readonly]):focus, 
+.oj-inputpassword-nocomp:not([disabled]):not([readonly]):focus, 
+.oj-textarea-nocomp:not([disabled]):not([readonly]):focus {
+    border-width: 1px;
+}
+
+
+/***** SHOPPING CART ****/
+.shopping-cart .oj-listview-item {
+    background-position: 0 0;
+}
+
+
+/**** FORMS ****/
+.oj-form-layout {
+    border-width: 0px;
+}
+
+.oj-applayout-fixed-top .oj-hybrid-applayout-navbar-page {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 0px;
+}
+
+.oj-navigationlist-horizontal .oj-navigationlist-divider {
+    display: block;
+}

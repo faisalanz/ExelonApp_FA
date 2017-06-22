@@ -1,0 +1,5 @@
+{
+  "port": "8100",
+  "apiServer": "https://mobile-gse00010387.mobileenv.us2.oraclecloud.com:443",
+  "platform": "android"
+}

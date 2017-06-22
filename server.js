@@ -10,7 +10,6 @@ var apiForwardingUrl = proxyConfig.apiServer;
 
 var PORT = process.env.PORT || 8085
 var app = express()
-app.set('port', proxyConfig.port);
 app.use(bodyParser.json());
 app.use(express.static(__dirname))
 app.use('/css/libs/oj/v2.0.0/common', express.static(__dirname+'/css/libs/common'));

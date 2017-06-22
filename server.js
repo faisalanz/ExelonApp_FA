@@ -8,7 +8,7 @@ var proxyConfig = require('./proxy-config.json');
 
 var apiForwardingUrl = proxyConfig.apiServer;
 
-var PORT = process.env.PORT || 8085
+var PORT = process.env.PORT || 8086
 var app = express()
 app.use(bodyParser.json());
 app.use(express.static(__dirname))

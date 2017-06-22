@@ -59,9 +59,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'mbe',
             });
             
             /** Mock data **/
-            self.inventory_url = "./data/inventory.json";
-            self.my_checkouts_url = "./data/my_checkouts.json";
-            self.sales_dashboard_url = "./data/salesdashboardMock.json";
+            self.inventory_url = "data/inventory.json";
+            self.my_checkouts_url = "data/my_checkouts.json";
             
             /*** MBE Urls ***/
             self.baseUrl = mbe.mcs_config.mobileBackends.RNDC.baseUrl;
